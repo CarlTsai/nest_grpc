@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package offer;
+
+service SbmmOffer {
+  rpc FindOne (OfferId) returns (Offer);
+  rpc FindAll (EmptyInput) returns (Offers);
+}
+
+message OfferId{
+  int32 id = 1;
+}
+
+message Offers{
+  repeated Offer offers = 1;
+}
+
+message Offer {
+  int32 id = 1;
+  string title = 2;
+}
+
+message EmptyInput {
+}
